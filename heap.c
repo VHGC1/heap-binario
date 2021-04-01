@@ -21,19 +21,21 @@ int filhoDireita(int i){
   return 2*i + 1;
 }
 
-void downHeap(HEAP * h){
+void downHeap(HEAP * h, int k){
   int i, temp;
   
-  temp = h->array[k];
+  temp = h->A[k];
 
   while(k <= (h->tamanhoAtual)/2){
     i = filhoEsquerda(k);
-    if((filhoEsquerda(k) <= h->A
-    
-    
-    
-    ))
+    if((filhoEsquerda(k) <= h->tamanhoAtual) && (h->A[filhoDireita(k)] < h->A[filhoDireita(k)]))
+      i++;
+    if(temp >= h->A[i])
+      break;
+    h->A[k] = h->A[i];
+    k = i;  
   }
+  h->A[k] = temp;
 }
 
 void inserir(HEAP * h, int valor){
