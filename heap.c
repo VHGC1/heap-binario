@@ -54,7 +54,13 @@ void inserir(HEAP * h, int valor){
     (h->tamanhoAtual)++;
     h->A[h->tamanhoAtual] = valor;
     printf("Valor inserido: %d\n", valor);
+
+    printf("Iniciando upHeap para validar o heap-order\n");
+    upHeap(h, h->tamanhoAtual);
+    return;
   }
+  printf("Inserção não realizada\n");
+  return;
 }
 
 void imprimirArranjo(HEAP h){
@@ -62,6 +68,21 @@ void imprimirArranjo(HEAP h){
   int i;
   for (i=1;i<=tamanho;i++) printf("%d ",h.A[i]);
   printf("\n");
+}
+
+void remover(HEAP * h, int valor){
+  int i;
+
+  for(int i = 0; i < h->tamanhoAtual; ++i){
+    if(h->A[i] == valor){
+      h->A[i] = h->A[h->tamanhoAtual];
+      (h->tamanhoAtual)--;
+      printf("Valor removido: %d \n", valor);
+      downHeap(h, i);
+      return;
+    }
+  }
+  printf("%d não foi encontrado\n!", valor);
 }
 
 void inicializarHeap(HEAP * h, int tamanhoMax){

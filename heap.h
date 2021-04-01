@@ -16,5 +16,7 @@ void upHeap(HEAP * h,int k);
 void inserir(HEAP * h, int valor);
 void remover(HEAP * h, int valor);
 void imprimirArranjo(HEAP p);
+void remover(HEAP * h, int valor);
+void inicializarHeap(HEAP * h, int tamanhoMax);
 
 void menu();
