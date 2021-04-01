@@ -38,6 +38,12 @@ void downHeap(HEAP * h, int k){
   h->A[k] = temp;
 }
 
+void downHeapAux(HEAP * h,int j){
+  for(int i; i < j;i++){
+    downHeap(h->tamanhoAtual,j);
+  }
+}
+
 void upHeap(HEAP * h, int k){
   int temp;
   temp = h->A[k];
@@ -70,7 +76,7 @@ void imprimirArranjo(HEAP h){
   printf("\n");
 }
 
-void remover(HEAP * h, int valor){
+void remover(HEAP *h, int valor){
   int i;
 
   for(int i = 0; i < h->tamanhoAtual; ++i){
@@ -82,7 +88,7 @@ void remover(HEAP * h, int valor){
       return;
     }
   }
-  printf("%d não foi encontrado\n!", valor);
+  printf("%d nao foi encontrado\n!", valor);
 }
 
 void inicializarHeap(HEAP * h, int tamanhoMax){
