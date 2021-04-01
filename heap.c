@@ -2,6 +2,13 @@
 #include <malloc.h>
 #include "heap.h";
 
+void inicializarHeap(HEAP * h, int tamanhoMax){
+  h->A = (int*) malloc(sizeof(int)*(tamanhoMax+1));
+  h->tamanhoAtual = 0;
+  h->tamanhoMaximo = tamanhoMax;
+}
+
+
 void destruirHeap(HEAP * h){
   int tamanho = h->tamanhoMaximo;
   free(h->A);
@@ -91,8 +98,3 @@ void remover(HEAP *h, int valor){
   printf("%d nao foi encontrado\n!", valor);
 }
 
-void inicializarHeap(HEAP * h, int tamanhoMax){
-  h->A = (int*) malloc(sizeof(int)*(tamanhoMax+1));
-  h->tamanhoAtual = 0;
-  h->tamanhoMaximo = tamanhoMax;
-}

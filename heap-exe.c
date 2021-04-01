@@ -32,9 +32,9 @@ main(){
         imprimirArranjo(*heap);
       
       case 2:
-         downHeapAux(heap,heap->tamanhoAtual);
+        downHeapAux(heap,heap->tamanhoAtual);
         
-          imprimirArranjo(*heap);
+        imprimirArranjo(*heap);
         
         break;
         
