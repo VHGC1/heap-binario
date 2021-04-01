@@ -38,6 +38,27 @@ void downHeap(HEAP * h, int k){
   h->A[k] = temp;
 }
 
+void maxHeapify(HEAP * h, int i){
+  int esq = filhoEsquerda(i);
+  int dir = filhoDireita(i);
+  int temp;
+  int maior = i;
+  if ((esq <= h->tamanhoAtual) && (h->A[esq]>h->A[i])) maior = esq;
+  if ((dir <= h->tamanhoAtual) && (h->A[dir]>h->A[maior])) maior = dir;
+  if (maior != i) {
+     temp = h->A[i];
+     h->A[i] = h->A[maior];
+     h->A[maior] = temp;
+     maxHeapify(h,maior);
+  }
+}
+
+void upHeap(HEAP * h){
+  int i;
+  int metadeTamanho = h->tamanhoAtual/2;
+  for (i=metadeTamanho;i>0;i--) maxHeapify(h,i);
+}
+
 void inserir(HEAP * h, int valor){
   if (h->tamanhoAtual < h->tamanhoMaximo){
     (h->tamanhoAtual)++;
