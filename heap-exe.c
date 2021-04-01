@@ -2,5 +2,8 @@
 #include "heap.c"
 
 main(){
-
+//valores adicionados no heap
+//options
+//imprimir
+//sort
 }
