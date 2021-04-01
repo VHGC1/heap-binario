@@ -6,7 +6,7 @@ typedef struct{
   int tamanhoMaximo;
 }HEAP;
 
-void inicializarHeap(HEAP * h, int tamanhoMax);
+void criarNodo(HEAP * h, int tamanhoMax);
 void destruirHeap(HEAP * h);
 int pai(int i);
 int filhoEsquerda(int i);

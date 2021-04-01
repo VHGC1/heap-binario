@@ -6,7 +6,7 @@ main(){
   int valor, op, num, i;
   HEAP *heap;
 
-  inicializarHeap(heap, 100);
+  criarNodo(heap, 100);
 
   for(int i = 1; i < 10; i++){
     valor = rand() % 100;
