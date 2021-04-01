@@ -53,3 +53,8 @@ void imprimirArranjo(HEAP h){
   printf("\n");
 }
 
+void inicializarHeap(HEAP * h, int tamanhoMax){
+  h->A = (int*) malloc(sizeof(int)*(tamanhoMax+1));
+  h->tamanhoAtual = 0;
+  h->tamanhoMaximo = tamanhoMax;
+}
